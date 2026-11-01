@@ -1,12 +1,5 @@
 # SlotWise AI — Intelligent Warehouse Slotting & Optimization Platform
 
-[![CI Pipeline](https://github.com/slotwise/slotwise-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/slotwise/slotwise-ai/actions/workflows/ci.yml)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.42+-FF4B4B.svg)](https://streamlit.io)
-[![OR-Tools](https://img.shields.io/badge/OR--Tools-9.11+-4285F4.svg)](https://developers.google.com/optimization)
-[![MLflow](https://img.shields.io/badge/MLflow-3.17+-0194E2.svg)](https://mlflow.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **SlotWise AI** is an enterprise-grade, explainable, and fully reproducible warehouse slotting optimization and operational analytics platform. It resolves sub-optimal SKU placement across multi-zone fulfillment centers by combining operations research constraint solvers, transactional relational persistence, chronological machine learning demand forecasting, and an agentic operational decision assistant protected by an anti-hallucination relational grounding firewall.
 
@@ -263,7 +256,3 @@ In compliance with rigorous engineering and academic standards:
 - **Zero-Key Deterministic Fallback**: System functions with 100% analytical fidelity without any external LLM API key.
 
 ---
-
-## 10. License
-
-MIT License. See [LICENSE](LICENSE) for details.
