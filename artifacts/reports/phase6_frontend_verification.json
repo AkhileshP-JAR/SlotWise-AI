@@ -1,0 +1,179 @@
+{
+  "backend_url": "http://127.0.0.1:8016",
+  "frontend_url": "http://127.0.0.1:8516",
+  "live_server_probes": {
+    "fastapi_health": {
+      "status_code": 200,
+      "payload": {
+        "status": "HEALTHY",
+        "service": "SlotWise AI",
+        "version": "1.0.0",
+        "environment": "local",
+        "database_connected": true,
+        "timestamp": "2026-10-31T07:52:14.912363"
+      }
+    },
+    "streamlit_health": {
+      "status_code": 200,
+      "body": "ok"
+    },
+    "streamlit_root_html": {
+      "status_code": 200,
+      "html_bytes": 1522,
+      "contains_streamlit_shell": true
+    }
+  },
+  "pages_verified": {
+    "frontend/app.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 2882.11,
+      "widget_summary": {
+        "markdown_blocks": 12,
+        "dataframes": 0,
+        "selectboxes": 2,
+        "buttons": 3,
+        "tabs": 0
+      }
+    },
+    "frontend/pages/01_Overview.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 1379.56,
+      "widget_summary": {
+        "markdown_blocks": 18,
+        "dataframes": 1,
+        "selectboxes": 2,
+        "buttons": 3,
+        "tabs": 0
+      }
+    },
+    "frontend/pages/02_Warehouse_Explorer.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 2091.69,
+      "widget_summary": {
+        "markdown_blocks": 14,
+        "dataframes": 2,
+        "selectboxes": 7,
+        "buttons": 1,
+        "tabs": 3
+      }
+    },
+    "frontend/pages/03_Inventory.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 1968.49,
+      "widget_summary": {
+        "markdown_blocks": 12,
+        "dataframes": 4,
+        "selectboxes": 8,
+        "buttons": 1,
+        "tabs": 3
+      }
+    },
+    "frontend/pages/04_Slotting_Optimizer.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 3044.25,
+      "widget_summary": {
+        "markdown_blocks": 15,
+        "dataframes": 4,
+        "selectboxes": 10,
+        "buttons": 4,
+        "tabs": 2
+      }
+    },
+    "frontend/pages/05_Picking_Analytics.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 1411.02,
+      "widget_summary": {
+        "markdown_blocks": 19,
+        "dataframes": 1,
+        "selectboxes": 3,
+        "buttons": 1,
+        "tabs": 0
+      }
+    },
+    "frontend/pages/06_Replenishment.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 1511.01,
+      "widget_summary": {
+        "markdown_blocks": 12,
+        "dataframes": 1,
+        "selectboxes": 4,
+        "buttons": 2,
+        "tabs": 0
+      }
+    },
+    "frontend/pages/07_Exceptions.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 1169.93,
+      "widget_summary": {
+        "markdown_blocks": 15,
+        "dataframes": 1,
+        "selectboxes": 7,
+        "buttons": 3,
+        "tabs": 0
+      }
+    },
+    "frontend/pages/08_Scenario_Comparison.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 1609.87,
+      "widget_summary": {
+        "markdown_blocks": 14,
+        "dataframes": 1,
+        "selectboxes": 4,
+        "buttons": 2,
+        "tabs": 0
+      }
+    },
+    "frontend/pages/09_System_Health.py": {
+      "passed": true,
+      "has_exception": false,
+      "exceptions": [],
+      "error_banners": [],
+      "warning_banners": [],
+      "execution_ms": 1690.1,
+      "widget_summary": {
+        "markdown_blocks": 15,
+        "dataframes": 1,
+        "selectboxes": 6,
+        "buttons": 3,
+        "tabs": 3
+      }
+    }
+  },
+  "all_pages_passed": true
+}

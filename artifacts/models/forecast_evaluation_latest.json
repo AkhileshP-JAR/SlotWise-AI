@@ -1,0 +1,904 @@
+{
+  "status": "COMPLETED",
+  "profile": "small",
+  "seed": 20261022,
+  "champion_model_name": "HIST_GRADIENT_BOOSTING_POISSON",
+  "baseline_reference_model": "NAIVE_SKU_TRAIN_MEAN",
+  "wape_improvement_vs_naive_pct": 1.16,
+  "daily_wape_improvement_vs_naive_pct": -43.77,
+  "mae_improvement_vs_naive_pct": 1.16,
+  "ml_beats_best_naive_baseline": false,
+  "mlflow_experiment_name": "SlotWise_SKU_Demand_Forecasting",
+  "mlflow_tracking_uri": "sqlite:///E:/Projects/YottaFlexAI/artifacts/mlruns/mlflow.db",
+  "champion_mlflow_run_id": "478023210b5447c6b9e64caa34d903f3",
+  "artifact_joblib_path": "E:/Projects/YottaFlexAI/artifacts/models/demand_forecaster_small.joblib",
+  "evaluation_report_path": "E:/Projects/YottaFlexAI/artifacts/models/forecast_evaluation_small.json",
+  "forecasts_path": "E:/Projects/YottaFlexAI/artifacts/models/sku_forecasts_small.json",
+  "split_info": {
+    "observation_start_date": "2026-01-01",
+    "observation_end_date": "2026-03-31",
+    "warmup_start_date": "2026-01-01",
+    "warmup_end_date": "2026-01-14",
+    "train_start_date": "2026-01-15",
+    "train_end_date": "2026-03-13",
+    "test_start_date": "2026-03-14",
+    "test_end_date": "2026-03-31",
+    "total_calendar_days": 90,
+    "warmup_days": 14,
+    "train_days": 58,
+    "test_days": 18,
+    "active_sku_count": 250,
+    "train_rows": 14500,
+    "test_rows": 4500,
+    "chronological_order_verified": true
+  },
+  "leaderboard": [
+    {
+      "model_name": "NAIVE_ZERO_FORECAST",
+      "model_family": "NAIVE_BASELINE",
+      "mlflow_run_id": "04decd660e4d4499bf67c3fa39c37d86",
+      "daily_mae": 0.6493,
+      "daily_rmse": 2.5486,
+      "daily_wape_pct": 100.0,
+      "horizon_mae": 11.688,
+      "horizon_rmse": 24.3614,
+      "horizon_wape_pct": 100.0,
+      "is_champion": false
+    },
+    {
+      "model_name": "NAIVE_SKU_TRAIN_MEAN",
+      "model_family": "NAIVE_BASELINE",
+      "mlflow_run_id": "9a152a805a7248c6ab6d010e1349bc34",
+      "daily_mae": 0.8999,
+      "daily_rmse": 2.2468,
+      "daily_wape_pct": 138.5932,
+      "horizon_mae": 6.779,
+      "horizon_rmse": 11.1652,
+      "horizon_wape_pct": 57.9997,
+      "is_champion": false
+    },
+    {
+      "model_name": "NAIVE_LAST_OBSERVATION",
+      "model_family": "NAIVE_BASELINE",
+      "mlflow_run_id": "fb4af4ea8fae46bb8c5fdefc19ff49de",
+      "daily_mae": 1.0302,
+      "daily_rmse": 3.2931,
+      "daily_wape_pct": 158.6585,
+      "horizon_mae": 22.752,
+      "horizon_rmse": 69.4316,
+      "horizon_wape_pct": 194.6612,
+      "is_champion": false
+    },
+    {
+      "model_name": "NAIVE_MOVING_AVG_7D",
+      "model_family": "NAIVE_BASELINE",
+      "mlflow_run_id": "f77a58efea24444ab00e8252b516f8ff",
+      "daily_mae": 0.9414,
+      "daily_rmse": 2.4289,
+      "daily_wape_pct": 144.9741,
+      "horizon_mae": 11.0937,
+      "horizon_rmse": 19.9823,
+      "horizon_wape_pct": 94.9154,
+      "is_champion": false
+    },
+    {
+      "model_name": "RIDGE_REGRESSION",
+      "model_family": "MACHINE_LEARNING",
+      "mlflow_run_id": "f6534cdddd414c01913ed5e56a819f7c",
+      "daily_mae": 0.8947,
+      "daily_rmse": 2.3839,
+      "daily_wape_pct": 137.7898,
+      "horizon_mae": 7.6844,
+      "horizon_rmse": 13.8687,
+      "horizon_wape_pct": 65.7464,
+      "is_champion": false
+    },
+    {
+      "model_name": "HIST_GRADIENT_BOOSTING_POISSON",
+      "model_family": "MACHINE_LEARNING",
+      "mlflow_run_id": "478023210b5447c6b9e64caa34d903f3",
+      "daily_mae": 0.9335,
+      "daily_rmse": 2.3605,
+      "daily_wape_pct": 143.7692,
+      "horizon_mae": 6.7006,
+      "horizon_rmse": 11.2762,
+      "horizon_wape_pct": 57.3285,
+      "is_champion": true
+    }
+  ],
+  "surging_sku_count": 39,
+  "velocity_shift_sku_count": 30,
+  "top_surging_skus": [
+    {
+      "sku_id": "SKU-000170",
+      "sku_name": "Food Beverage Item 00170",
+      "category": "FOOD_BEVERAGE",
+      "active_warehouse_id": "WH-002",
+      "active_location_id": "LOC-Z009-000047",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.2889,
+      "forecast_daily_demand": 0.5368,
+      "forecast_total_units": 7.51,
+      "forecast_std_dev": 1.1414,
+      "surge_ratio": 1.858,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "MEDIUM",
+      "forecast_velocity_percentile": 0.644,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 4.23,
+      "forecast_reorder_point": 4.33,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.4266
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.0859
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.4275
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 2.3424
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.7066
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 0.0891
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 0.3764
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 3.037
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 0.0039
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000038",
+      "sku_name": "Consumer Goods Item 00038",
+      "category": "CONSUMER_GOODS",
+      "active_warehouse_id": "WH-002",
+      "active_location_id": "LOC-Z009-000039",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.3222,
+      "forecast_daily_demand": 0.5475,
+      "forecast_total_units": 7.67,
+      "forecast_std_dev": 1.0259,
+      "surge_ratio": 1.699,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "MEDIUM",
+      "forecast_velocity_percentile": 0.652,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 8.99,
+      "forecast_reorder_point": 10.16,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.626
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.9569
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 0.0896
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.0988
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 1.4043
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 1.1608
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 0.9527
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 0.1076
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 0.1044
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 2.1485
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000021",
+      "sku_name": "Consumer Goods Item 00021",
+      "category": "CONSUMER_GOODS",
+      "active_warehouse_id": "WH-001",
+      "active_location_id": "LOC-Z002-000017",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.3778,
+      "forecast_daily_demand": 0.6377,
+      "forecast_total_units": 8.93,
+      "forecast_std_dev": 1.226,
+      "surge_ratio": 1.688,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "MEDIUM",
+      "forecast_velocity_percentile": 0.696,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 4.93,
+      "forecast_reorder_point": 5.05,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.8312
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.6916
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 0.1588
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.7303
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 0.9464
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 1.4853
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 1.1536
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 0.1753
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 1.0913
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 1.6489
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000031",
+      "sku_name": "Pharmaceutical Item 00031",
+      "category": "PHARMACEUTICAL",
+      "active_warehouse_id": "WH-001",
+      "active_location_id": "LOC-Z006-000011",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.4222,
+      "forecast_daily_demand": 0.6683,
+      "forecast_total_units": 9.36,
+      "forecast_std_dev": 1.1746,
+      "surge_ratio": 1.583,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "MEDIUM",
+      "forecast_velocity_percentile": 0.712,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 5.34,
+      "forecast_reorder_point": 5.51,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.1423
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.5558
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.3132
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 0.1547
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.1732
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 0.9231
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 2.8094
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.162
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 0.4389
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 0.2725
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 0.1737
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 0.1686
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 1.0953
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 1.9731
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000106",
+      "sku_name": "Consumer Goods Item 00106",
+      "category": "CONSUMER_GOODS",
+      "active_warehouse_id": "WH-002",
+      "active_location_id": "LOC-Z009-000043",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.4667,
+      "forecast_daily_demand": 0.7304,
+      "forecast_total_units": 10.23,
+      "forecast_std_dev": 1.6427,
+      "surge_ratio": 1.565,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "MEDIUM",
+      "forecast_velocity_percentile": 0.748,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 8.11,
+      "forecast_reorder_point": 8.2,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.1048
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 1.7296
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.1821
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 0.3345
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 1.9736
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.1156
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 3.3259
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 0.1683
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 0.3633
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 1.9129
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000054",
+      "sku_name": "Electronics Item 00054",
+      "category": "ELECTRONICS",
+      "active_warehouse_id": "WH-002",
+      "active_location_id": "LOC-Z009-000028",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.7667,
+      "forecast_daily_demand": 1.1491,
+      "forecast_total_units": 16.09,
+      "forecast_std_dev": 2.4077,
+      "surge_ratio": 1.499,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "FAST",
+      "forecast_velocity_percentile": 0.84,
+      "velocity_tier_changed": true,
+      "historical_reorder_point": 22.87,
+      "forecast_reorder_point": 24.56,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 4.4793
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.2803
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.9065
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 1.9719
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 0.999
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 0.4628
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 1.5114
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 0.2938
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 0.7567
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 1.4277
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 2.2641
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 0.7261
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000235",
+      "sku_name": "Industrial Hardware Item 00235",
+      "category": "INDUSTRIAL_HARDWARE",
+      "active_warehouse_id": "WH-001",
+      "active_location_id": "LOC-Z003-000021",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.7556,
+      "forecast_daily_demand": 1.1285,
+      "forecast_total_units": 15.8,
+      "forecast_std_dev": 1.6133,
+      "surge_ratio": 1.494,
+      "historical_velocity": "FAST",
+      "forecast_velocity": "FAST",
+      "forecast_velocity_percentile": 0.828,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 7.89,
+      "forecast_reorder_point": 8.23,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.4168
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.7633
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.7181
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 1.1156
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.7483
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 1.9462
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 1.511
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.3117
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 1.1258
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 0.5068
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 1.1918
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 0.556
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 2.6355
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 2.2524
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000034",
+      "sku_name": "Apparel Item 00034",
+      "category": "APPAREL",
+      "active_warehouse_id": "WH-002",
+      "active_location_id": "LOC-Z009-000052",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.4889,
+      "forecast_daily_demand": 0.7214,
+      "forecast_total_units": 10.1,
+      "forecast_std_dev": 1.2821,
+      "surge_ratio": 1.476,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "MEDIUM",
+      "forecast_velocity_percentile": 0.74,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 12.03,
+      "forecast_reorder_point": 13.04,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.3624
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.6385
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.8233
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 0.3027
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.306
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 0.462
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 1.4113
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.3428
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 0.9897
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 1.1402
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 0.3767
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 0.3609
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 0.5762
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 2.0075
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000085",
+      "sku_name": "Electronics Item 00085",
+      "category": "ELECTRONICS",
+      "active_warehouse_id": "WH-001",
+      "active_location_id": "LOC-Z002-000047",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.3556,
+      "forecast_daily_demand": 0.5067,
+      "forecast_total_units": 7.09,
+      "forecast_std_dev": 0.8857,
+      "surge_ratio": 1.425,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "MEDIUM",
+      "forecast_velocity_percentile": 0.628,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 4.78,
+      "forecast_reorder_point": 4.86,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.418
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.6213
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.0817
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 0.2594
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 1.3208
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 0.3002
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.5031
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 0.9774
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 0.103
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 0.3156
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 0.0039
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 1.9397
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 0.2457
+        }
+      ]
+    },
+    {
+      "sku_id": "SKU-000211",
+      "sku_name": "Food Beverage Item 00211",
+      "category": "FOOD_BEVERAGE",
+      "active_warehouse_id": "WH-001",
+      "active_location_id": "LOC-Z007-000007",
+      "forecast_horizon_days": 14,
+      "historical_daily_demand": 0.5,
+      "forecast_daily_demand": 0.7098,
+      "forecast_total_units": 9.94,
+      "forecast_std_dev": 1.1834,
+      "surge_ratio": 1.42,
+      "historical_velocity": "MEDIUM",
+      "forecast_velocity": "MEDIUM",
+      "forecast_velocity_percentile": 0.732,
+      "velocity_tier_changed": false,
+      "historical_reorder_point": 4.9,
+      "forecast_reorder_point": 4.88,
+      "slotting_recommendation": "PROMOTE_TO_DOCK_PROXIMATE_FAST_PICK",
+      "replenishment_recommendation": "MAINTAIN_STANDARD_REORDER_POLICY",
+      "daily_forecast_trajectory": [
+        {
+          "forecast_date": "2026-04-01",
+          "predicted_units": 0.3493
+        },
+        {
+          "forecast_date": "2026-04-02",
+          "predicted_units": 0.1271
+        },
+        {
+          "forecast_date": "2026-04-03",
+          "predicted_units": 0.1615
+        },
+        {
+          "forecast_date": "2026-04-04",
+          "predicted_units": 0.8631
+        },
+        {
+          "forecast_date": "2026-04-05",
+          "predicted_units": 1.1809
+        },
+        {
+          "forecast_date": "2026-04-06",
+          "predicted_units": 1.8695
+        },
+        {
+          "forecast_date": "2026-04-07",
+          "predicted_units": 0.2458
+        },
+        {
+          "forecast_date": "2026-04-08",
+          "predicted_units": 0.3832
+        },
+        {
+          "forecast_date": "2026-04-09",
+          "predicted_units": 0.1318
+        },
+        {
+          "forecast_date": "2026-04-10",
+          "predicted_units": 0.1665
+        },
+        {
+          "forecast_date": "2026-04-11",
+          "predicted_units": 0.9994
+        },
+        {
+          "forecast_date": "2026-04-12",
+          "predicted_units": 1.0208
+        },
+        {
+          "forecast_date": "2026-04-13",
+          "predicted_units": 2.185
+        },
+        {
+          "forecast_date": "2026-04-14",
+          "predicted_units": 0.2533
+        }
+      ]
+    }
+  ],
+  "trained_at": "2026-10-31T11:59:11.646009"
+}

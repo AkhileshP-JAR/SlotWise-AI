@@ -1,0 +1,16 @@
+dataset:
+  profile: "full"
+  warehouses: 20
+  locations: 10000
+  skus: 5000
+  order_lines: 100000
+  batch_size: 10000
+  anomaly_injection:
+    enabled: true
+    capacity_exceeded_count: 25
+    incompatible_colocation_count: 20
+    duplicate_active_assignment_count: 15
+    blocked_aisle_pick_count: 25
+    replenishment_overload_warehouses: 5
+    unassignable_oversized_sku_count: 12
+    nearly_exhausted_location_count: 25

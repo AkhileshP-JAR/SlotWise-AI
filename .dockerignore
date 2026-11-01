@@ -1,0 +1,28 @@
+.git
+.github
+.venv
+.pytest_cache
+.ruff_cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+Thumbs.db
+
+# Sensitive local environments
+.env
+.env.*
+!.env.example
+
+# Local SQLite databases (re-initialized or volume mounted)
+data/*.db
+data/*.db-journal
+
+# MLflow SQLite & temp artifacts
+artifacts/mlruns/mlflow.db
+artifacts/mlruns/mlflow.db-journal
+
+# Temporary scratch & logs
+scratch/
+*.log

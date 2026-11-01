@@ -1,0 +1,320 @@
+{
+  "profile": "small",
+  "seed": 20261022,
+  "total_elapsed_seconds": 10.178,
+  "database_load": null,
+  "baseline_exception_detection": {
+    "active_findings_count": 21,
+    "newly_created_count": 21,
+    "auto_resolved_count": 0,
+    "by_issue_type": {
+      "BLOCKED_AISLE_PICK_PATH": 4,
+      "CAPACITY_EXCEEDED": 4,
+      "CAPACITY_NEARLY_EXHAUSTED": 4,
+      "DUPLICATE_ACTIVE_ASSIGNMENT": 3,
+      "INCOMPATIBLE_COLOCATION": 3,
+      "NO_COMPATIBLE_LOCATION": 2,
+      "REPLENISHMENT_LABOR_OVERLOAD": 1
+    },
+    "by_severity": {
+      "CRITICAL": 7,
+      "HIGH": 10,
+      "MEDIUM": 4
+    }
+  },
+  "ground_truth_evaluation": {
+    "ground_truth_available": true,
+    "profile": "small",
+    "expected_anomalies": 21,
+    "detected_benchmark_exceptions": 21,
+    "true_positives": 21,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "unmatched_false_negatives": [],
+    "unexpected_false_positives": []
+  },
+  "optimization_run": {
+    "run_id": "OPT-2026-000001",
+    "algorithm_name": "ORTOOLS_CPSAT",
+    "sku_count": 250,
+    "assigned_count": 248,
+    "unassigned_count": 2,
+    "unassigned_skus": [
+      "SKU-000209",
+      "SKU-000238"
+    ],
+    "candidate_count": 29229,
+    "rejected_candidate_count": 35227,
+    "average_assignment_score": 0.7451,
+    "execution_duration_ms": 6613.82,
+    "proposed_count_before_approval": 248,
+    "approval": {
+      "run_id": "OPT-2026-000001",
+      "approved_count": 248,
+      "superseded_count": 248,
+      "reconciled_locations": 299
+    },
+    "baseline_assignment_rows_preserved": 248,
+    "assignment_status_counts": {
+      "ACTIVE": 248,
+      "SUPERSEDED": 248
+    },
+    "moved_sku_count": 244
+  },
+  "post_optimization_exception_scan": {
+    "active_findings_count": 7,
+    "newly_created_count": 0,
+    "auto_resolved_count": 14,
+    "by_issue_type": {
+      "BLOCKED_AISLE_PICK_PATH": 4,
+      "NO_COMPATIBLE_LOCATION": 2,
+      "REPLENISHMENT_LABOR_OVERLOAD": 1
+    },
+    "by_severity": {
+      "HIGH": 7
+    }
+  },
+  "picking_comparison": {
+    "warehouse_scope": "ALL",
+    "optimization_run_id": "OPT-2026-000001",
+    "orders_evaluated": 497,
+    "order_lines_evaluated": 1415,
+    "blocked_stops_excluded": 0,
+    "baseline_distance_m": 67608.4,
+    "baseline_slotting_optimized_route_distance_m": 62511.6,
+    "optimized_slotting_baseline_route_distance_m": 57843.4,
+    "optimized_distance_m": 51893.2,
+    "distance_saved_m": 15715.2,
+    "percentage_improvement": 23.24,
+    "pure_slotting_distance_saved_m": 9765.0,
+    "baseline_time_seconds": 79335.96,
+    "optimized_time_seconds": 65268.08,
+    "estimated_time_saved_seconds": 14067.88,
+    "time_improvement_pct": 17.73
+  },
+  "replenishment_comparison": {
+    "baseline": {
+      "warehouse_scope": "ALL",
+      "demand_source": "HISTORICAL_OBSERVED",
+      "forecast_adjusted_sku_count": 0,
+      "total_requests": 132,
+      "total_labor_minutes_required": 736.55,
+      "total_available_labor_minutes": 2875.0,
+      "overall_labor_utilization_pct": 25.62,
+      "overloaded_task_count": 0,
+      "overloaded_warehouses": [],
+      "warehouse_breakdown": [
+        {
+          "warehouse_id": "WH-001",
+          "task_count": 60,
+          "overloaded_task_count": 0,
+          "labor_minutes_required": 335.45,
+          "available_labor_minutes": 1437.5,
+          "assigned_labor_minutes": 335.45,
+          "labor_utilization_pct": 23.34,
+          "is_overloaded": false
+        },
+        {
+          "warehouse_id": "WH-002",
+          "task_count": 72,
+          "overloaded_task_count": 0,
+          "labor_minutes_required": 401.09,
+          "available_labor_minutes": 1437.5,
+          "assigned_labor_minutes": 401.09,
+          "labor_utilization_pct": 27.9,
+          "is_overloaded": false
+        }
+      ]
+    },
+    "optimized": {
+      "warehouse_scope": "ALL",
+      "demand_source": "HISTORICAL_OBSERVED",
+      "forecast_adjusted_sku_count": 0,
+      "total_requests": 166,
+      "total_labor_minutes_required": 928.95,
+      "total_available_labor_minutes": 2875.0,
+      "overall_labor_utilization_pct": 32.31,
+      "overloaded_task_count": 0,
+      "overloaded_warehouses": [],
+      "warehouse_breakdown": [
+        {
+          "warehouse_id": "WH-001",
+          "task_count": 80,
+          "overloaded_task_count": 0,
+          "labor_minutes_required": 447.6,
+          "available_labor_minutes": 1437.5,
+          "assigned_labor_minutes": 447.6,
+          "labor_utilization_pct": 31.14,
+          "is_overloaded": false
+        },
+        {
+          "warehouse_id": "WH-002",
+          "task_count": 86,
+          "overloaded_task_count": 0,
+          "labor_minutes_required": 481.35,
+          "available_labor_minutes": 1437.5,
+          "assigned_labor_minutes": 481.35,
+          "labor_utilization_pct": 33.49,
+          "is_overloaded": false
+        }
+      ]
+    }
+  },
+  "scenario_comparison": {
+    "scenario_id": "SCN-2026-00001",
+    "scenario_name": "Phase 3-4 End-to-End Slotting & Routing (small)",
+    "optimization_run_id": "OPT-2026-000001",
+    "comparison_delta": {
+      "orders_compared": 497,
+      "order_lines_compared": 1415,
+      "pick_distance_saved_m": 15715.2,
+      "pick_distance_reduction_pct": 23.24,
+      "pure_slotting_distance_saved_m": 9765.0,
+      "pick_time_saved_seconds": 14067.88,
+      "pick_time_improvement_pct": 17.73,
+      "average_score_delta": 0.099,
+      "capacity_violations_eliminated": 4,
+      "weight_utilization_delta_pct": -2.06,
+      "replenishment_labor_delta_minutes": 192.4
+    }
+  },
+  "kpis": {
+    "baseline": {
+      "warehouse_scope": "ALL",
+      "warehouse": {
+        "total_warehouses": 2,
+        "total_zones": 14,
+        "total_locations": 500,
+        "occupied_locations": 242,
+        "available_locations": 258,
+        "blocked_locations": 0,
+        "location_utilization_pct": 48.4,
+        "weight_capacity_utilization_pct": 5.92,
+        "volume_capacity_utilization_pct": 26.43
+      },
+      "sku": {
+        "total_skus": 250,
+        "fast_movers": 50,
+        "medium_movers": 112,
+        "slow_movers": 88,
+        "abc_distribution": {
+          "A": 31,
+          "B": 62,
+          "C": 157
+        },
+        "xyz_distribution": {
+          "X": 0,
+          "Y": 1,
+          "Z": 249
+        }
+      },
+      "optimization": {
+        "latest_run_id": null,
+        "algorithm_name": "BASELINE_UNOPTIMIZED",
+        "assignment_success_rate": 0.968,
+        "assignment_failure_rate": 0.032,
+        "constraint_violation_count": 4,
+        "average_assignment_score": 0.6461,
+        "candidate_slot_availability": 258,
+        "evaluated_candidate_pairs": 0,
+        "execution_duration_ms": 0.0
+      },
+      "picking_simulated_estimates": {
+        "orders_evaluated": 497,
+        "baseline_pick_distance_m": 67608.4,
+        "optimized_pick_distance_m": 62620.8,
+        "distance_saved_m": 4987.6,
+        "distance_improvement_pct": 7.38,
+        "picking_time_saved_seconds": 4738.02,
+        "picking_time_improvement_pct": 5.97
+      },
+      "replenishment": {
+        "replenishment_requests": 136,
+        "total_workload_minutes": 2227.29,
+        "available_labor_minutes": 2875.0,
+        "labor_utilization_pct": 77.47,
+        "overloaded_tasks": 6
+      },
+      "exceptions": {
+        "total_exceptions": 21,
+        "open_exceptions": 21,
+        "critical_and_high_open": 17,
+        "warning_and_low_open": 4,
+        "resolved_exceptions": 0
+      }
+    },
+    "post_optimization": {
+      "warehouse_scope": "ALL",
+      "warehouse": {
+        "total_warehouses": 2,
+        "total_zones": 14,
+        "total_locations": 500,
+        "occupied_locations": 224,
+        "available_locations": 276,
+        "blocked_locations": 0,
+        "location_utilization_pct": 44.8,
+        "weight_capacity_utilization_pct": 3.86,
+        "volume_capacity_utilization_pct": 12.39
+      },
+      "sku": {
+        "total_skus": 250,
+        "fast_movers": 50,
+        "medium_movers": 112,
+        "slow_movers": 88,
+        "abc_distribution": {
+          "A": 31,
+          "B": 62,
+          "C": 157
+        },
+        "xyz_distribution": {
+          "X": 0,
+          "Y": 1,
+          "Z": 249
+        }
+      },
+      "optimization": {
+        "latest_run_id": "OPT-2026-000001",
+        "algorithm_name": "ORTOOLS_CPSAT",
+        "assignment_success_rate": 0.992,
+        "assignment_failure_rate": 0.008,
+        "constraint_violation_count": 0,
+        "average_assignment_score": 0.7451,
+        "candidate_slot_availability": 276,
+        "evaluated_candidate_pairs": 29229,
+        "execution_duration_ms": 6613.82
+      },
+      "picking_simulated_estimates": {
+        "orders_evaluated": 497,
+        "baseline_pick_distance_m": 67608.4,
+        "optimized_pick_distance_m": 51893.2,
+        "distance_saved_m": 15715.2,
+        "distance_improvement_pct": 23.24,
+        "picking_time_saved_seconds": 14067.88,
+        "picking_time_improvement_pct": 17.73
+      },
+      "replenishment": {
+        "replenishment_requests": 136,
+        "total_workload_minutes": 2227.29,
+        "available_labor_minutes": 2875.0,
+        "labor_utilization_pct": 77.47,
+        "overloaded_tasks": 6
+      },
+      "exceptions": {
+        "total_exceptions": 21,
+        "open_exceptions": 7,
+        "critical_and_high_open": 7,
+        "warning_and_low_open": 0,
+        "resolved_exceptions": 14
+      }
+    }
+  },
+  "auditability": {
+    "persisted_assignment_reasons": 2098,
+    "persisted_rejected_candidate_reasons": 750,
+    "persisted_exception_records": 21,
+    "persisted_audit_events": 6
+  }
+}

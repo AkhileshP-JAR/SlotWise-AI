@@ -1,0 +1,375 @@
+[
+  {
+    "check": "sqlite_integrity_check",
+    "status": "PASS",
+    "hard": true,
+    "detail": "ok"
+  },
+  {
+    "check": "sqlite_foreign_key_check",
+    "status": "PASS",
+    "hard": true,
+    "detail": "0 orphan FK rows"
+  },
+  {
+    "check": "table_counts",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "aisles": 33,
+      "alembic_version": 1,
+      "assignment_reasons": 2098,
+      "audit_events": 6,
+      "compatibility_rules": 8,
+      "exceptions": 21,
+      "hazard_classes": 6,
+      "locations": 500,
+      "optimization_runs": 1,
+      "order_lines": 5000,
+      "orders": 1697,
+      "pick_events": 4738,
+      "pickers": 8,
+      "replenishments": 136,
+      "scenarios": 1,
+      "sku_profiles": 250,
+      "skus": 250,
+      "slot_assignments": 496,
+      "suppliers": 16,
+      "warehouses": 2,
+      "zone_hazard_allowances": 28,
+      "zones": 14
+    }
+  },
+  {
+    "check": "ground_truth_columns_absent_from_db",
+    "status": "PASS",
+    "hard": true,
+    "detail": "no forbidden columns"
+  },
+  {
+    "check": "exception_engine_never_references_ground_truth",
+    "status": "PASS",
+    "hard": true,
+    "detail": "exception_engine.py"
+  },
+  {
+    "check": "active_assignment_unique_per_sku",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "skus_with_multiple_active": []
+    }
+  },
+  {
+    "check": "dedicated_location_single_active_sku",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "locations": []
+    }
+  },
+  {
+    "check": "active_skus_without_active_assignment",
+    "status": "WARN",
+    "hard": false,
+    "detail": {
+      "count": 2
+    }
+  },
+  {
+    "check": "active_assignment_dimension_valid",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0,
+      "sample": []
+    }
+  },
+  {
+    "check": "active_assignment_temperature_valid",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0,
+      "sample": []
+    }
+  },
+  {
+    "check": "active_assignment_hazard_valid",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0,
+      "sample": []
+    }
+  },
+  {
+    "check": "active_assignment_blocked_valid",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0,
+      "sample": []
+    }
+  },
+  {
+    "check": "active_assignment_alloc_weight_valid",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0,
+      "sample": []
+    }
+  },
+  {
+    "check": "active_assignment_alloc_volume_valid",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0,
+      "sample": []
+    }
+  },
+  {
+    "check": "active_colocation_conflicts",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "locations": []
+    }
+  },
+  {
+    "check": "location_current_load_equals_sum_of_active_allocations",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "drifting_locations": 0,
+      "sample": []
+    }
+  },
+  {
+    "check": "active_allocations_within_location_capacity",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "over_capacity_locations": []
+    }
+  },
+  {
+    "check": "lifecycle_effective_to_consistent",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "active_with_end": 0,
+      "closed_without_end": 0
+    }
+  },
+  {
+    "check": "decision_version_unique_per_sku",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "duplicates": []
+    }
+  },
+  {
+    "check": "decision_version_monotonic",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "violations": []
+    }
+  },
+  {
+    "check": "history_preserved_info",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "superseded_rows": 248,
+      "total_rows": 496
+    }
+  },
+  {
+    "check": "assignment_reasons_reference_existing_assignments",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "orphans": 0
+    }
+  },
+  {
+    "check": "every_optimized_assignment_has_decision_record",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "assignments_without_selected_reason": 0
+    }
+  },
+  {
+    "check": "every_rejected_candidate_has_reason",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "rejected_without_reason": 0
+    }
+  },
+  {
+    "check": "order_line_arithmetic",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "bad_rows": 0
+    }
+  },
+  {
+    "check": "order_line_price_matches_sku_price",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "mismatches": 0
+    }
+  },
+  {
+    "check": "pick_qty_not_exceeding_order_qty",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0
+    }
+  },
+  {
+    "check": "pick_after_order_timestamp",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0
+    }
+  },
+  {
+    "check": "no_orphan_order_lines",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "orphans": 0
+    }
+  },
+  {
+    "check": "orders_have_lines",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "orders_without_lines": 0
+    }
+  },
+  {
+    "check": "profile_units_and_lines_match_order_lines",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "mismatches": 0,
+      "sample": [],
+      "observed_days": 90
+    }
+  },
+  {
+    "check": "profile_adv_equals_units_over_90_days",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "mismatches": 0
+    }
+  },
+  {
+    "check": "profile_rop_formula_recomputed",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "mismatches": 0,
+      "sample": []
+    }
+  },
+  {
+    "check": "exceptions_reference_existing_entities",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "orphans": []
+    }
+  },
+  {
+    "check": "exception_counts_info",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "BLOCKED_AISLE_PICK_PATH": 4,
+      "CAPACITY_EXCEEDED": 4,
+      "CAPACITY_NEARLY_EXHAUSTED": 4,
+      "DUPLICATE_ACTIVE_ASSIGNMENT": 3,
+      "INCOMPATIBLE_COLOCATION": 3,
+      "NO_COMPATIBLE_LOCATION": 2,
+      "REPLENISHMENT_LABOR_OVERLOAD": 1
+    }
+  },
+  {
+    "check": "replenishment_labor_by_warehouse_info",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "WH-001": {
+        "assigned": 329.8,
+        "capacity": 1437.5
+      },
+      "WH-002": {
+        "assigned": 1146.3,
+        "capacity": 1437.5
+      }
+    }
+  },
+  {
+    "check": "overloaded_tasks_truly_short_of_labor",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "inconsistent": 0
+    }
+  },
+  {
+    "check": "replenishment_qty_not_above_required",
+    "status": "PASS",
+    "hard": true,
+    "detail": {
+      "violations": 0
+    }
+  },
+  {
+    "check": "synthetic_realism_summary_info",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "top20pct_skus_unit_share": 0.686,
+      "zero_demand_skus": 1,
+      "lines_per_order_avg": 2.95,
+      "hazmat_sku_share": 0.112,
+      "non_ambient_sku_share": 0.22,
+      "unit_weight_kg_min_med_max": [
+        0.133,
+        3.41,
+        57.895
+      ],
+      "blocked_locations": 0,
+      "blocked_aisles": 1,
+      "orders_per_day_min_max": [
+        3,
+        48
+      ]
+    }
+  },
+  {
+    "check": "demand_is_heavy_tailed",
+    "status": "PASS",
+    "hard": false,
+    "detail": {
+      "top20pct_share": 0.686
+    }
+  }
+]

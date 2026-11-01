@@ -1,0 +1,16 @@
+dataset:
+  profile: "small"
+  warehouses: 2
+  locations: 500
+  skus: 250
+  order_lines: 5000
+  batch_size: 2500
+  anomaly_injection:
+    enabled: true
+    capacity_exceeded_count: 4
+    incompatible_colocation_count: 3
+    duplicate_active_assignment_count: 3
+    blocked_aisle_pick_count: 4
+    replenishment_overload_warehouses: 1
+    unassignable_oversized_sku_count: 2
+    nearly_exhausted_location_count: 4

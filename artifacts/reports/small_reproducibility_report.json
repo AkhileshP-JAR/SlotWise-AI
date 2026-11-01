@@ -1,0 +1,38 @@
+{
+  "entity_counts": {
+    "aisles": 33,
+    "compatibility_rules": 8,
+    "hazard_classes": 6,
+    "locations": 500,
+    "order_lines": 5000,
+    "orders": 1697,
+    "pick_events": 4738,
+    "pickers": 8,
+    "replenishments": 136,
+    "sku_profiles": 250,
+    "skus": 250,
+    "slot_assignments": 248,
+    "suppliers": 16,
+    "warehouses": 2,
+    "zone_hazard_allowances": 28,
+    "zones": 14
+  },
+  "entity_counts_match": true,
+  "file_sha256_hashes_match": true,
+  "ground_truth_anomaly_count": 21,
+  "ground_truth_counts_match": true,
+  "is_reproducible": true,
+  "mismatched_hashes": {},
+  "profile": "small",
+  "sample_checksums_sha256": {
+    "exports/small/operational_dataset.json": "2c493d24bf35375a169ad0a5c4e945639645c7adc26dbbccee1e10ee84c10b00",
+    "exports/small/seed.sql": "287013a5bf86758c6be22b877c9afe845aa52bb7d711ef58cdde56c69bcaf184",
+    "generated/small/aisles.csv": "d83a9c4fe3150cfbdf2fb4d9d3d4991f890e03fef086210f3e952302e5efbb57",
+    "generated/small/compatibility_rules.csv": "5c86023fa2d4634d9fd0d6d8990e1fb21be2aa878de2febc74e291cf3a988a23",
+    "generated/small/hazard_classes.csv": "63db25605ab49771018ecea5f37c01cf933d70ae051bf33c5af50dc425ba769f",
+    "generated/small/locations.csv": "7e2c5be3b0a931b92325440090c25bdd04946f4102904415718319c04816592f"
+  },
+  "seed": 20261022,
+  "total_files_hashed": 20,
+  "validation_outcomes_match": true
+}

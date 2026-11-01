@@ -1,0 +1,49 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: slotwise-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - CONFIG_PROFILE=small
+      - DATABASE_URL=sqlite:////app/data/slotwise.db
+      - ENABLE_ML=true
+      - LLM_PROVIDER=none
+      - CORS_ORIGINS=http://localhost:8501,http://127.0.0.1:8501
+    volumes:
+      - slotwise-data:/app/data
+      - slotwise-artifacts:/app/artifacts
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: slotwise-frontend
+    restart: unless-stopped
+    command: ["streamlit", "run", "frontend/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://backend:8000
+      - ENABLE_ML=true
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - slotwise-artifacts:/app/artifacts:ro
+
+volumes:
+  slotwise-data:
+    driver: local
+  slotwise-artifacts:
+    driver: local

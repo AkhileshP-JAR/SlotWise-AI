@@ -1,0 +1,81 @@
+project:
+  name: "SlotWise AI"
+  version: "1.0.0"
+  config_version: "cfg-2026.1"
+  seed: 20261022
+
+dataset:
+  profile: "small"
+  reference_year: 2026
+  observation_start_date: "2026-01-01"
+  observation_days: 90
+  warehouses: 2
+  locations: 500
+  skus: 250
+  order_lines: 5000
+  batch_size: 2500
+  anomaly_injection:
+    enabled: true
+    capacity_exceeded_count: 4
+    incompatible_colocation_count: 3
+    duplicate_active_assignment_count: 3
+    blocked_aisle_pick_count: 4
+    replenishment_overload_warehouses: 1
+    unassignable_oversized_sku_count: 2
+    nearly_exhausted_location_count: 4
+
+demand_analytics:
+  velocity_percentiles:
+    fast_min_percentile: 0.80
+    medium_min_percentile: 0.35
+  abc_thresholds:
+    a_cumulative_value_share: 0.80
+    b_cumulative_value_share: 0.95
+  xyz_cv_thresholds:
+    x_max_cv: 0.50
+    y_max_cv: 1.00
+  safety_stock_z_score: 1.645
+  default_lead_time_days: 5.0
+
+scoring:
+  weights:
+    demand_velocity: 0.30
+    pick_frequency: 0.20
+    distance: 0.15
+    capacity_utilization: 0.15
+    replenishment_efficiency: 0.10
+    zone_compatibility: 0.10
+  ideal_capacity_utilization: 0.78
+
+optimization:
+  top_n_candidates: 15
+  ortools_max_skus: 300
+  ortools_time_limit_seconds: 15.0
+  local_swap_max_iterations: 250
+  default_storage_policy: "DEDICATED_SINGLE_SKU"
+  auto_approve_assignments: false
+
+simulation:
+  picking:
+    default_walk_speed_mps: 1.25
+    pick_handling_seconds_per_line: 10.0
+    pick_handling_seconds_per_unit: 1.5
+    congestion_penalty_multiplier: 1.35
+    two_opt_max_passes: 50
+  replenishment:
+    base_setup_minutes: 5.0
+    travel_speed_mps: 1.0
+    handling_minutes_per_100_units: 3.0
+    high_frequency_warning_threshold: 12.0
+
+exceptions:
+  capacity_near_exhaustion_ratio: 0.92
+  excessive_replenishment_monthly_threshold: 12.0
+
+ml_forecasting:
+  train_ratio: 0.80
+  warmup_lag_days: 14
+  forecast_horizon_days: 14
+  mlflow_experiment_name: "SlotWise_SKU_Demand_Forecasting"
+  surge_threshold_ratio: 1.20
+  decline_threshold_ratio: 0.80

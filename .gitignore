@@ -1,0 +1,133 @@
+# ==============================================================================
+# SlotWise AI — Git Ignore Specification
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Python Bytecode, Build & Distribution
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------------------------------------------
+# 2. Virtual Environments
+# ------------------------------------------------------------------------------
+.venv/
+venv/
+ENV/
+env/
+.env_*/
+
+# ------------------------------------------------------------------------------
+# 3. Environment Variables, Credentials & Secrets
+# ------------------------------------------------------------------------------
+.env
+.env.*
+.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cert
+.streamlit/secrets.toml
+.streamlit/credentials.toml
+
+# ------------------------------------------------------------------------------
+# 4. Databases & SQLite Journals
+# ------------------------------------------------------------------------------
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# ------------------------------------------------------------------------------
+# 5. Generated Datasets & Exports (keep directory structure & sample files)
+# ------------------------------------------------------------------------------
+data/generated/*
+!data/generated/.gitkeep
+data/exports/*
+!data/exports/.gitkeep
+data/ground_truth/*
+!data/ground_truth/.gitkeep
+data/manifests/*
+!data/manifests/.gitkeep
+SlotWise AI — Project Report.docx
+
+# ------------------------------------------------------------------------------
+# 6. MLflow Tracking, Large Models & Runtime Logs
+# ------------------------------------------------------------------------------
+mlruns/
+mlartifacts/
+artifacts/mlruns/*
+!artifacts/mlruns/.gitkeep
+# Exclude heavy multi-warehouse retrained models (keep small demo models)
+artifacts/models/*_medium.joblib
+artifacts/models/*_full.joblib
+*.log
+logs/
+
+# ------------------------------------------------------------------------------
+# 7. Testing, Coverage & Static Analysis Caches
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.hypothesis/
+.tox/
+.nox/
+
+# ------------------------------------------------------------------------------
+# 8. Temporary Files, Scratch Workspaces & Office Locks
+# ------------------------------------------------------------------------------
+scratch/
+tmp/
+temp/
+*.tmp
+~*.tmp
+~$*
+*~
+*.bak
+*.swp
+*.swo
+
+# ------------------------------------------------------------------------------
+# 9. Operating System & IDE Files
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+.directory
+$RECYCLE.BIN/
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project

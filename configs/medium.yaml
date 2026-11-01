@@ -1,0 +1,16 @@
+dataset:
+  profile: "medium"
+  warehouses: 5
+  locations: 2500
+  skus: 1000
+  order_lines: 25000
+  batch_size: 5000
+  anomaly_injection:
+    enabled: true
+    capacity_exceeded_count: 10
+    incompatible_colocation_count: 8
+    duplicate_active_assignment_count: 6
+    blocked_aisle_pick_count: 10
+    replenishment_overload_warehouses: 2
+    unassignable_oversized_sku_count: 5
+    nearly_exhausted_location_count: 10

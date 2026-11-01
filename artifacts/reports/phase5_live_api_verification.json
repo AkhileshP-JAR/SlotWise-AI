@@ -1,0 +1,817 @@
+{
+  "server_url": "http://127.0.0.1:8015",
+  "probes": {
+    "GET /health": {
+      "status_code": 200,
+      "response": {
+        "status": "HEALTHY",
+        "service": "SlotWise AI",
+        "version": "1.0.0",
+        "environment": "local",
+        "database_connected": true,
+        "timestamp": "2026-10-31T05:13:56.131351"
+      }
+    },
+    "GET /openapi.json": {
+      "status_code": 200,
+      "openapi_version": "3.1.0",
+      "title": "SlotWise AI \u2014 Warehouse Slotting & Optimization API",
+      "version": "1.0.0",
+      "path_count": 35,
+      "paths": [
+        "/api/v1/analytics/optimization",
+        "/api/v1/analytics/overview",
+        "/api/v1/analytics/warehouse/{warehouse_id}",
+        "/api/v1/assistant/query",
+        "/api/v1/data/generate",
+        "/api/v1/data/manifest",
+        "/api/v1/data/validate",
+        "/api/v1/exceptions",
+        "/api/v1/exceptions/scan",
+        "/api/v1/exceptions/{exception_id}",
+        "/api/v1/exceptions/{exception_id}/resolve",
+        "/api/v1/locations",
+        "/api/v1/locations/{location_id}",
+        "/api/v1/optimization/assignments/history",
+        "/api/v1/optimization/run",
+        "/api/v1/optimization/runs",
+        "/api/v1/optimization/runs/{run_id}",
+        "/api/v1/optimization/runs/{run_id}/approve",
+        "/api/v1/optimization/runs/{run_id}/assignments",
+        "/api/v1/optimization/runs/{run_id}/reject",
+        "/api/v1/picking/analytics",
+        "/api/v1/picking/simulate",
+        "/api/v1/replenishment/analytics",
+        "/api/v1/replenishment/simulate",
+        "/api/v1/scenarios",
+        "/api/v1/scenarios/{scenario_id}/comparison",
+        "/api/v1/skus",
+        "/api/v1/skus/{sku_id}",
+        "/api/v1/skus/{sku_id}/candidates",
+        "/api/v1/skus/{sku_id}/profile",
+        "/api/v1/system/audit-events",
+        "/api/v1/system/status",
+        "/api/v1/warehouses",
+        "/api/v1/warehouses/{warehouse_id}",
+        "/health"
+      ]
+    },
+    "GET /docs": {
+      "status_code": 200,
+      "contains_swagger_ui": true
+    },
+    "GET /api/v1/system/status": {
+      "status_code": 200,
+      "response": {
+        "status": "HEALTHY",
+        "version": "1.0.0",
+        "config_version": "cfg-2026.1",
+        "active_profile": "small",
+        "dataset_version": "slotwise-small-v1-seed20261022",
+        "seed": 20261022,
+        "database_dialect": "sqlite",
+        "database_connected": true,
+        "write_auth_configured": false,
+        "table_counts": {
+          "warehouses": 2,
+          "hazard_classes": 6,
+          "zones": 14,
+          "zone_hazard_allowances": 28,
+          "compatibility_rules": 8,
+          "aisles": 33,
+          "locations": 500,
+          "suppliers": 16,
+          "skus": 250,
+          "sku_profiles": 250,
+          "orders": 1697,
+          "order_lines": 5000,
+          "pickers": 8,
+          "pick_events": 4738,
+          "replenishments": 136,
+          "optimization_runs": 1,
+          "slot_assignments": 496,
+          "assignment_reasons": 2098,
+          "scenarios": 1,
+          "exceptions": 21,
+          "audit_events": 6
+        },
+        "total_records": 15309,
+        "last_validation": {
+          "profile": "small",
+          "is_valid": true,
+          "summary": {
+            "expected_labelled_anomaly_count": 21,
+            "ground_truth_expected_total": 21,
+            "ground_truth_matched_total": 21,
+            "ground_truth_unmatched_total": 0,
+            "operational_warning_count": 0,
+            "unexpected_error_count": 0
+          }
+        },
+        "latest_optimization_run": {
+          "run_id": "OPT-2026-000001",
+          "warehouse_scope": "ALL",
+          "zone_scope": null,
+          "input_dataset_version": "slotwise-small-seed20261022",
+          "config_version": "cfg-2026.1",
+          "algorithm_name": "ORTOOLS_CPSAT",
+          "algorithm_version": "1.0.0",
+          "scoring_weights_json": {
+            "demand_velocity": 0.3,
+            "pick_frequency": 0.2,
+            "distance": 0.15,
+            "capacity_utilization": 0.15,
+            "replenishment_efficiency": 0.1,
+            "zone_compatibility": 0.1
+          },
+          "seed": 20261022,
+          "sku_count": 250,
+          "candidate_count": 29229,
+          "assignment_count": 248,
+          "unassigned_sku_count": 2,
+          "rejected_candidate_count": 35227,
+          "exception_count": 2,
+          "kpi_results_json": {
+            "assignment_success_rate": 0.992,
+            "assignment_failure_rate": 0.008,
+            "average_assignment_score": 0.7451,
+            "constraint_violation_count": 0,
+            "unassigned_skus": [
+              "SKU-000209",
+              "SKU-000238"
+            ]
+          },
+          "execution_duration_ms": 9420.96,
+          "run_status": "PARTIAL",
+          "created_at": "2026-10-31T04:25:59.172239"
+        },
+        "ml_status": {
+          "enabled": true,
+          "trained_artifacts_present": false,
+          "artifacts_directory": "E:/Projects/YottaFlexAI/artifacts/models"
+        },
+        "assistant_status": {
+          "langgraph_enabled": true,
+          "llm_provider": "none",
+          "execution_mode": "DETERMINISTIC_GROUNDED_FALLBACK"
+        },
+        "timestamp": "2026-10-31T05:13:58.757061"
+      }
+    },
+    "GET /api/v1/warehouses/WH-001": {
+      "status_code": 200,
+      "response_summary": {
+        "warehouse_id": "WH-001",
+        "warehouse_name": "Pune Fulfillment Center 01",
+        "total_locations": 228,
+        "occupied_locations": 110,
+        "location_utilization_pct": 48.25,
+        "zone_count": 7,
+        "aisle_count": 16,
+        "blocked_aisle_count": 0
+      }
+    },
+    "GET /api/v1/skus/SKU-000001/candidates?top_n=2&max_rejected_samples=2": {
+      "status_code": 200,
+      "response": {
+        "sku_id": "SKU-000001",
+        "warehouse_scope": "ALL",
+        "zone_scope": null,
+        "total_locations_evaluated": 500,
+        "total_feasible_count": 176,
+        "total_rejected_count": 324,
+        "rejection_reason_counts": {
+          "AISLE_BLOCKED": 17,
+          "DEDICATED_LOCATION_ALREADY_OCCUPIED": 185,
+          "HAZARD_CONFLICT:LITHIUM_BATTERY_WITH_FLAMMABLE": 2,
+          "HAZARD_NOT_PERMITTED:LITHIUM_BATTERY": 211,
+          "TEMPERATURE_MISMATCH:AMBIENT_VS_CHILLED": 57,
+          "TEMPERATURE_MISMATCH:AMBIENT_VS_CONTROLLED_ROOM": 42,
+          "TEMPERATURE_MISMATCH:AMBIENT_VS_FROZEN": 42
+        },
+        "top_feasible": [
+          {
+            "sku_id": "SKU-000001",
+            "location_id": "LOC-Z007-000020",
+            "warehouse_id": "WH-001",
+            "zone_id": "Z007",
+            "zone_type": "HAZMAT",
+            "accessibility_type": "FLOOR_PALLET",
+            "is_feasible": true,
+            "assigned_quantity": 5,
+            "allocated_weight_kg": 19.84,
+            "allocated_volume_m3": 0.046435,
+            "total_score": 0.8257,
+            "rank_position": 1,
+            "score_breakdown": {
+              "total_score": 0.8257,
+              "velocity_score": 0.9776,
+              "pick_frequency_score": 0.9617,
+              "distance_score": 0.7212,
+              "capacity_score": 0.3995,
+              "replenishment_score": 1.0,
+              "compatibility_score": 0.72,
+              "dock_distance_m": 62.3,
+              "explanation": "Selected/Evaluated LOC-Z007-000020 (HAZMAT, FLOOR_PALLET, 62.3m from dock) for MEDIUM mover SKU-000001 (ABC=B, qty=5): total=0.8257 [vel=0.98, freq=0.96, dist=0.72, cap=0.40, rep=1.00, zone=0.72]."
+            },
+            "hard_constraints_checked": {
+              "warehouse_active": true,
+              "zone_active": true,
+              "location_and_aisle_unblocked": true,
+              "dimensional_fit": true,
+              "weight_capacity": true,
+              "volume_capacity": true,
+              "temperature_compatible": true,
+              "hazard_compatible": true,
+              "storage_policy_and_colocation": true,
+              "ergonomic_handling_safe": true
+            },
+            "rejection_reasons": []
+          },
+          {
+            "sku_id": "SKU-000001",
+            "location_id": "LOC-Z014-000014",
+            "warehouse_id": "WH-002",
+            "zone_id": "Z014",
+            "zone_type": "HAZMAT",
+            "accessibility_type": "FLOOR_PALLET",
+            "is_feasible": true,
+            "assigned_quantity": 5,
+            "allocated_weight_kg": 19.84,
+            "allocated_volume_m3": 0.046435,
+            "total_score": 0.7983,
+            "rank_position": 2,
+            "score_breakdown": {
+              "total_score": 0.7983,
+              "velocity_score": 0.9776,
+              "pick_frequency_score": 0.9462,
+              "distance_score": 0.7137,
+              "capacity_score": 0.245,
+              "replenishment_score": 1.0,
+              "compatibility_score": 0.72,
+              "dock_distance_m": 59.1,
+              "explanation": "Selected/Evaluated LOC-Z014-000014 (HAZMAT, FLOOR_PALLET, 59.1m from dock) for MEDIUM mover SKU-000001 (ABC=B, qty=5): total=0.7983 [vel=0.98, freq=0.95, dist=0.71, cap=0.24, rep=1.00, zone=0.72]."
+            },
+            "hard_constraints_checked": {
+              "warehouse_active": true,
+              "zone_active": true,
+              "location_and_aisle_unblocked": true,
+              "dimensional_fit": true,
+              "weight_capacity": true,
+              "volume_capacity": true,
+              "temperature_compatible": true,
+              "hazard_compatible": true,
+              "storage_policy_and_colocation": true,
+              "ergonomic_handling_safe": true
+            },
+            "rejection_reasons": []
+          }
+        ],
+        "rejected_samples": [
+          {
+            "sku_id": "SKU-000001",
+            "location_id": "LOC-Z001-000015",
+            "warehouse_id": "WH-001",
+            "zone_id": "Z001",
+            "zone_type": "FAST_PICK",
+            "accessibility_type": "STANDARD_REACH",
+            "is_feasible": false,
+            "assigned_quantity": 5,
+            "allocated_weight_kg": 19.84,
+            "allocated_volume_m3": 0.046435,
+            "total_score": 0.0,
+            "rank_position": null,
+            "score_breakdown": {
+              "total_score": 0.0,
+              "velocity_score": 0.0,
+              "pick_frequency_score": 0.0,
+              "distance_score": 0.0,
+              "capacity_score": 0.0,
+              "replenishment_score": 0.0,
+              "compatibility_score": 0.0,
+              "dock_distance_m": 15.5,
+              "explanation": "Rejected due to failed hard constraints: DEDICATED_LOCATION_ALREADY_OCCUPIED"
+            },
+            "hard_constraints_checked": {
+              "warehouse_active": true,
+              "zone_active": true,
+              "location_and_aisle_unblocked": true,
+              "dimensional_fit": true,
+              "weight_capacity": true,
+              "volume_capacity": true,
+              "temperature_compatible": true,
+              "hazard_compatible": true,
+              "storage_policy_and_colocation": false,
+              "ergonomic_handling_safe": true
+            },
+            "rejection_reasons": [
+              "DEDICATED_LOCATION_ALREADY_OCCUPIED"
+            ]
+          },
+          {
+            "sku_id": "SKU-000001",
+            "location_id": "LOC-Z001-000020",
+            "warehouse_id": "WH-001",
+            "zone_id": "Z001",
+            "zone_type": "FAST_PICK",
+            "accessibility_type": "GOLDEN_ZONE",
+            "is_feasible": false,
+            "assigned_quantity": 1,
+            "allocated_weight_kg": 3.968,
+            "allocated_volume_m3": 0.009287,
+            "total_score": 0.0,
+            "rank_position": null,
+            "score_breakdown": {
+              "total_score": 0.0,
+              "velocity_score": 0.0,
+              "pick_frequency_score": 0.0,
+              "distance_score": 0.0,
+              "capacity_score": 0.0,
+              "replenishment_score": 0.0,
+              "compatibility_score": 0.0,
+              "dock_distance_m": 13.1,
+              "explanation": "Rejected due to failed hard constraints: DEDICATED_LOCATION_ALREADY_OCCUPIED"
+            },
+            "hard_constraints_checked": {
+              "warehouse_active": true,
+              "zone_active": true,
+              "location_and_aisle_unblocked": true,
+              "dimensional_fit": true,
+              "weight_capacity": true,
+              "volume_capacity": true,
+              "temperature_compatible": true,
+              "hazard_compatible": true,
+              "storage_policy_and_colocation": false,
+              "ergonomic_handling_safe": true
+            },
+            "rejection_reasons": [
+              "DEDICATED_LOCATION_ALREADY_OCCUPIED"
+            ]
+          }
+        ]
+      }
+    },
+    "GET /api/v1/optimization/runs": {
+      "status_code": 200,
+      "response": {
+        "items": [
+          {
+            "run_id": "OPT-2026-000001",
+            "warehouse_scope": "ALL",
+            "zone_scope": null,
+            "input_dataset_version": "slotwise-small-seed20261022",
+            "config_version": "cfg-2026.1",
+            "algorithm_name": "ORTOOLS_CPSAT",
+            "algorithm_version": "1.0.0",
+            "scoring_weights_json": {
+              "demand_velocity": 0.3,
+              "pick_frequency": 0.2,
+              "distance": 0.15,
+              "capacity_utilization": 0.15,
+              "replenishment_efficiency": 0.1,
+              "zone_compatibility": 0.1
+            },
+            "seed": 20261022,
+            "sku_count": 250,
+            "candidate_count": 29229,
+            "assignment_count": 248,
+            "unassigned_sku_count": 2,
+            "rejected_candidate_count": 35227,
+            "exception_count": 2,
+            "kpi_results_json": {
+              "assignment_success_rate": 0.992,
+              "assignment_failure_rate": 0.008,
+              "average_assignment_score": 0.7451,
+              "constraint_violation_count": 0,
+              "unassigned_skus": [
+                "SKU-000209",
+                "SKU-000238"
+              ]
+            },
+            "execution_duration_ms": 9420.96,
+            "run_status": "PARTIAL",
+            "created_at": "2026-10-31T04:25:59.172239"
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "page_size": 25,
+          "total_items": 1,
+          "total_pages": 1
+        }
+      }
+    },
+    "POST /api/v1/picking/simulate": {
+      "request": {
+        "warehouse_id": "WH-001",
+        "max_orders": 150
+      },
+      "status_code": 200,
+      "response": {
+        "warehouse_scope": "WH-001",
+        "optimization_run_id": null,
+        "orders_evaluated": 150,
+        "order_lines_evaluated": 442,
+        "blocked_stops_excluded": 0,
+        "baseline_distance_m": 20737.8,
+        "baseline_slotting_optimized_route_distance_m": 18900.0,
+        "optimized_slotting_baseline_route_distance_m": 16840.4,
+        "optimized_distance_m": 14974.0,
+        "distance_saved_m": 5763.8,
+        "percentage_improvement": 27.79,
+        "pure_slotting_distance_saved_m": 3897.4,
+        "baseline_time_seconds": 24339.29,
+        "optimized_time_seconds": 19391.96,
+        "estimated_time_saved_seconds": 4947.33,
+        "time_improvement_pct": 20.33,
+        "sample_order_0": {
+          "order_id": "ORD-2026-000002",
+          "warehouse_id": "WH-001",
+          "line_count": 5,
+          "baseline_distance_m": 188.6,
+          "optimized_distance_m": 159.6,
+          "distance_saved_m": 29.0,
+          "baseline_time_seconds": 255.91,
+          "optimized_time_seconds": 223.6,
+          "baseline_sequence": [
+            "LOC-Z002-000044",
+            "LOC-Z007-000016",
+            "LOC-Z004-000019",
+            "LOC-Z002-000033",
+            "LOC-Z003-000008"
+          ],
+          "optimized_sequence": [
+            "LOC-Z004-000010",
+            "LOC-Z002-000033",
+            "LOC-Z002-000047",
+            "LOC-Z007-000014",
+            "LOC-Z007-000022"
+          ],
+          "baseline_waypoints": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              29.8,
+              5.7
+            ],
+            [
+              56.2,
+              5.7
+            ],
+            [
+              30.2,
+              5.7
+            ],
+            [
+              26.2,
+              8.9
+            ],
+            [
+              40.6,
+              5.7
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "optimized_waypoints": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              25.4,
+              7.3
+            ],
+            [
+              26.2,
+              8.9
+            ],
+            [
+              28.6,
+              7.3
+            ],
+            [
+              55.0,
+              4.1
+            ],
+            [
+              55.0,
+              7.3
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    },
+    "GET /api/v1/exceptions?resolution_status=OPEN&page_size=3": {
+      "status_code": 200,
+      "response": {
+        "items": [
+          {
+            "exception_id": "EXC-2026-000015",
+            "optimization_run_id": null,
+            "category": "BUSINESS_RULE_VIOLATION",
+            "issue_type": "BLOCKED_AISLE_PICK_PATH",
+            "severity": "HIGH",
+            "entity_type": "PICK_EVENT",
+            "entity_id": "PICK-ORD-2026-000001-001",
+            "related_entity_ids_json": [
+              "AISLE-Z009-01",
+              "LOC-Z009-000001",
+              "ORD-2026-000001",
+              "SKU-000034"
+            ],
+            "description": "Pick event PICK-ORD-2026-000001-001 (Order ORD-2026-000001) routed through blocked aisle AISLE-Z009-01 at location LOC-Z009-000001.",
+            "detected_at": "2026-10-31T04:25:58.101054",
+            "resolution_status": "OPEN",
+            "resolved_at": null,
+            "resolution_note": null,
+            "recommended_action": "Reroute pick tour via adjacent unblocked cross-aisle and relocate active forward pick stock.",
+            "ground_truth_flag": null
+          },
+          {
+            "exception_id": "EXC-2026-000016",
+            "optimization_run_id": null,
+            "category": "BUSINESS_RULE_VIOLATION",
+            "issue_type": "BLOCKED_AISLE_PICK_PATH",
+            "severity": "HIGH",
+            "entity_type": "PICK_EVENT",
+            "entity_id": "PICK-ORD-2026-000001-002",
+            "related_entity_ids_json": [
+              "AISLE-Z009-01",
+              "LOC-Z009-000001",
+              "ORD-2026-000001",
+              "SKU-000172"
+            ],
+            "description": "Pick event PICK-ORD-2026-000001-002 (Order ORD-2026-000001) routed through blocked aisle AISLE-Z009-01 at location LOC-Z009-000001.",
+            "detected_at": "2026-10-31T04:25:58.101054",
+            "resolution_status": "OPEN",
+            "resolved_at": null,
+            "resolution_note": null,
+            "recommended_action": "Reroute pick tour via adjacent unblocked cross-aisle and relocate active forward pick stock.",
+            "ground_truth_flag": null
+          },
+          {
+            "exception_id": "EXC-2026-000017",
+            "optimization_run_id": null,
+            "category": "BUSINESS_RULE_VIOLATION",
+            "issue_type": "BLOCKED_AISLE_PICK_PATH",
+            "severity": "HIGH",
+            "entity_type": "PICK_EVENT",
+            "entity_id": "PICK-ORD-2026-000005-001",
+            "related_entity_ids_json": [
+              "AISLE-Z009-01",
+              "LOC-Z009-000001",
+              "ORD-2026-000005",
+              "SKU-000008"
+            ],
+            "description": "Pick event PICK-ORD-2026-000005-001 (Order ORD-2026-000005) routed through blocked aisle AISLE-Z009-01 at location LOC-Z009-000001.",
+            "detected_at": "2026-10-31T04:25:58.101054",
+            "resolution_status": "OPEN",
+            "resolved_at": null,
+            "resolution_note": null,
+            "recommended_action": "Reroute pick tour via adjacent unblocked cross-aisle and relocate active forward pick stock.",
+            "ground_truth_flag": null
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "page_size": 3,
+          "total_items": 7,
+          "total_pages": 3
+        }
+      }
+    },
+    "GET /api/v1/analytics/overview": {
+      "status_code": 200,
+      "response": {
+        "warehouse_scope": "ALL",
+        "warehouse": {
+          "total_warehouses": 2,
+          "total_zones": 14,
+          "total_locations": 500,
+          "occupied_locations": 224,
+          "available_locations": 276,
+          "blocked_locations": 0,
+          "location_utilization_pct": 44.8,
+          "weight_capacity_utilization_pct": 3.86,
+          "volume_capacity_utilization_pct": 12.39
+        },
+        "sku": {
+          "total_skus": 250,
+          "fast_movers": 50,
+          "medium_movers": 112,
+          "slow_movers": 88,
+          "abc_distribution": {
+            "A": 31,
+            "B": 62,
+            "C": 157
+          },
+          "xyz_distribution": {
+            "X": 0,
+            "Y": 1,
+            "Z": 249
+          }
+        },
+        "optimization": {
+          "latest_run_id": "OPT-2026-000001",
+          "algorithm_name": "ORTOOLS_CPSAT",
+          "assignment_success_rate": 0.992,
+          "assignment_failure_rate": 0.008,
+          "constraint_violation_count": 0,
+          "average_assignment_score": 0.7451,
+          "candidate_slot_availability": 29229,
+          "execution_duration_ms": 9420.96
+        },
+        "picking_simulated_estimates": {
+          "orders_evaluated": 248,
+          "baseline_pick_distance_m": 33145.6,
+          "optimized_pick_distance_m": 25381.0,
+          "distance_saved_m": 7764.6,
+          "distance_improvement_pct": 23.43,
+          "picking_time_saved_seconds": 6945.6,
+          "picking_time_improvement_pct": 17.93
+        },
+        "replenishment": {
+          "replenishment_requests": 136,
+          "total_workload_minutes": 2227.29,
+          "available_labor_minutes": 2875.0,
+          "labor_utilization_pct": 77.47,
+          "overloaded_tasks": 6
+        },
+        "exceptions": {
+          "total_exceptions": 21,
+          "open_exceptions": 7,
+          "critical_and_high_open": 7,
+          "warning_and_low_open": 0,
+          "resolved_exceptions": 14
+        },
+        "ground_truth_evaluation": {
+          "ground_truth_available": true,
+          "profile": "small",
+          "expected_anomalies": 21,
+          "detected_benchmark_exceptions": 21,
+          "true_positives": 21,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "unmatched_false_negatives": [],
+          "unexpected_false_positives": []
+        }
+      }
+    },
+    "GET /api/v1/scenarios": {
+      "status_code": 200,
+      "response": {
+        "items": [
+          {
+            "scenario_id": "SCN-2026-00001",
+            "scenario_name": "Phase 3-4 End-to-End Slotting & Routing (small)",
+            "description": "Automated comparison of baseline warehouse slotting vs. constrained optimization.",
+            "warehouse_id": null,
+            "optimization_run_id": "OPT-2026-000001",
+            "parameters_json": {
+              "warehouse_scope": "ALL",
+              "max_orders": 500
+            },
+            "baseline_metrics_json": {
+              "assignment_count": 248,
+              "occupied_locations": 242,
+              "location_occupancy_pct": 48.4,
+              "weight_utilization_pct": 5.92,
+              "volume_utilization_pct": 26.43,
+              "average_assignment_score": 0.6461,
+              "capacity_violation_locations": 4,
+              "pick_distance_m": 67608.4,
+              "pick_time_seconds": 79335.96,
+              "replenishment_requests": 132,
+              "replenishment_labor_minutes": 736.55,
+              "replenishment_overloaded_tasks": 0
+            },
+            "optimized_metrics_json": {
+              "assignment_count": 248,
+              "occupied_locations": 224,
+              "location_occupancy_pct": 44.8,
+              "weight_utilization_pct": 3.86,
+              "volume_utilization_pct": 12.39,
+              "average_assignment_score": 0.7451,
+              "capacity_violation_locations": 0,
+              "pick_distance_m": 51893.2,
+              "pick_time_seconds": 65268.08,
+              "replenishment_requests": 166,
+              "replenishment_labor_minutes": 928.95,
+              "replenishment_overloaded_tasks": 0
+            },
+            "comparison_delta_json": {
+              "orders_compared": 497,
+              "order_lines_compared": 1415,
+              "pick_distance_saved_m": 15715.2,
+              "pick_distance_reduction_pct": 23.24,
+              "pure_slotting_distance_saved_m": 9765.0,
+              "pick_time_saved_seconds": 14067.88,
+              "pick_time_improvement_pct": 17.73,
+              "average_score_delta": 0.099,
+              "capacity_violations_eliminated": 4,
+              "weight_utilization_delta_pct": -2.06,
+              "replenishment_labor_delta_minutes": 192.4
+            },
+            "created_at": "2026-10-31T04:26:11.860608"
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "page_size": 25,
+          "total_items": 1,
+          "total_pages": 1
+        }
+      }
+    },
+    "POST /api/v1/assistant/query": {
+      "request": {
+        "question": "What are the picking distance savings across orders in WH-001?",
+        "warehouse_id": "WH-001"
+      },
+      "status_code": 200,
+      "response": {
+        "question": "What are the picking distance savings across orders in WH-001?",
+        "classified_intent": "PICKING_SAVINGS_ANALYSIS",
+        "execution_mode": "DETERMINISTIC_GROUNDED_FALLBACK",
+        "answer": "Based on live operational warehouse records (PICKING_SAVINGS_ANALYSIS): Across 200 identical orders, pick travel drops from 27322.8 m to 19818.0 m, saving 7504.8 m (27.47%). Estimated fulfillment pick time savings: 6456.56 seconds (20.2%).",
+        "key_findings": [
+          "Across 200 identical orders, pick travel drops from 27322.8 m to 19818.0 m, saving 7504.8 m (27.47%).",
+          "Estimated fulfillment pick time savings: 6456.56 seconds (20.2%)."
+        ],
+        "supporting_metrics": {
+          "orders_evaluated": 200,
+          "baseline_pick_distance_m": 27322.8,
+          "optimized_pick_distance_m": 19818.0,
+          "distance_saved_m": 7504.8,
+          "distance_improvement_pct": 27.47,
+          "picking_time_saved_seconds": 6456.56,
+          "picking_time_improvement_pct": 20.2
+        },
+        "cited_entity_ids": [
+          "OPT-2026-000001"
+        ],
+        "grounding_verified": true,
+        "trace": [
+          {
+            "node_name": "classify_intent",
+            "summary": "Classified query as 'PICKING_SAVINGS_ANALYSIS' (sku=None, location=None, warehouse=WH-001).",
+            "record_ids": [
+              "WH-001"
+            ]
+          },
+          {
+            "node_name": "retrieve_warehouse_context",
+            "summary": "Retrieved 2 warehouses and target entity metadata from SQL.",
+            "record_ids": [
+              "WH-001",
+              "WH-002"
+            ]
+          },
+          {
+            "node_name": "retrieve_kpi_and_exceptions",
+            "summary": "Loaded live KPI snapshot and 7 open operational exceptions.",
+            "record_ids": [
+              "OPT-2026-000001",
+              "EXC-2026-000015",
+              "EXC-2026-000016",
+              "EXC-2026-000017",
+              "EXC-2026-000018",
+              "EXC-2026-000019"
+            ]
+          },
+          {
+            "node_name": "run_deterministic_analysis",
+            "summary": "Computed 2 deterministic analytical findings citing 1 DB entities.",
+            "record_ids": [
+              "OPT-2026-000001"
+            ]
+          },
+          {
+            "node_name": "synthesize_explanation",
+            "summary": "Synthesized structured response via DETERMINISTIC_GROUNDED_FALLBACK.",
+            "record_ids": [
+              "OPT-2026-000001"
+            ]
+          },
+          {
+            "node_name": "validate_grounding",
+            "summary": "Verified all cited entity IDs against relational database (grounding_verified=True).",
+            "record_ids": []
+          }
+        ]
+      }
+    }
+  }
+}

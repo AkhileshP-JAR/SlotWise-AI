@@ -1,0 +1,76 @@
+{
+  "timestamp_utc": "2026-10-31T11:52:43.895035+00:00",
+  "profiles_benchmarked": [
+    "small"
+  ],
+  "profiles": {
+    "small": {
+      "profile": "small",
+      "warehouses": 2,
+      "locations": 500,
+      "skus": 250,
+      "order_lines": 5000,
+      "total_pipeline_seconds": 173.335,
+      "benchmarks": {
+        "synthetic_data_generation": {
+          "step_name": "synthetic_data_generation",
+          "elapsed_seconds": 22.2857,
+          "peak_memory_mb": 33.83,
+          "records_generated": 12934,
+          "throughput_records_per_sec": 580.37
+        },
+        "data_validation": {
+          "step_name": "data_validation",
+          "elapsed_seconds": 6.7635,
+          "peak_memory_mb": 5.69,
+          "rules_evaluated": 18,
+          "validation_status": "PASSED"
+        },
+        "database_ingestion": {
+          "step_name": "database_ingestion",
+          "elapsed_seconds": 7.0083,
+          "peak_memory_mb": 8.52,
+          "records_loaded": 12934,
+          "throughput_records_per_sec": 1845.53
+        },
+        "slotting_optimization": {
+          "step_name": "slotting_optimization",
+          "elapsed_seconds": 63.2402,
+          "peak_memory_mb": 19.37,
+          "sku_count": 250,
+          "candidate_count": 29229,
+          "assigned_count": 248,
+          "success_rate_pct": 99.2,
+          "solver_duration_ms": 59106.16
+        },
+        "picking_simulation": {
+          "step_name": "picking_simulation",
+          "elapsed_seconds": 3.197,
+          "peak_memory_mb": 4.78,
+          "orders_evaluated": 497,
+          "distance_saved_m": 15715.2,
+          "distance_improvement_pct": 23.24,
+          "time_improvement_pct": 17.73,
+          "throughput_orders_per_sec": 155.46
+        },
+        "replenishment_simulation": {
+          "step_name": "replenishment_simulation",
+          "elapsed_seconds": 0.1707,
+          "peak_memory_mb": 1.84,
+          "task_count": 166,
+          "total_labor_minutes": 928.95,
+          "overloaded_tasks": 0
+        },
+        "ml_forecaster_training": {
+          "step_name": "ml_forecaster_training",
+          "elapsed_seconds": 70.6697,
+          "peak_memory_mb": 130.96,
+          "champion_model": "HIST_GRADIENT_BOOSTING_POISSON",
+          "baseline_reference": "NAIVE_SKU_TRAIN_MEAN",
+          "wape_improvement_pct": 1.16,
+          "active_sku_count": 250
+        }
+      }
+    }
+  }
+}
